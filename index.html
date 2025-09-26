@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Patterns & Merino Dashboard</title>
+  
+  <!-- React & Babel CDNs -->
+  <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+  <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+  
+  <!-- CSS Styling -->
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f4f4f4;
+    }
+    .dashboard {
+      display: flex;
+      height: 100vh;
+    }
+    .sidebar {
+      width: 220px;
+      background-color: #333;
+      color: white;
+      padding: 20px;
+    }
+    .sidebar h2 {
+      color: #f9c846;
+    }
+    .sidebar ul {
+      list-style: none;
+      padding: 0;
+    }
+    .sidebar ul li {
+      margin: 15px 0;
+      cursor: pointer;
+      color: #ccc;
+    }
+    .sidebar ul li:hover {
+      color: white;
+    }
+    .main-content {
+      flex: 1;
+      padding: 30px;
+      overflow-y: auto;
+    }
+    .card {
+      background: white;
+      border-radius: 8px;
+      padding: 20px;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    .header {
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div id="root"></div>
+
+  <!-- React Code -->
+  <script type="text/babel">
+
+    const Sidebar = () => (
+      <div className="sidebar">
+        <h2>🧶 Patterns & Merino</h2>
+        <ul>
+          <li>Dashboard</li>
+          <li>Patterns</li>
+          <li>Yarn Inventory</li>
+          <li>Orders</li>
+          <li>Settings</li>
+        </ul>
+      </div>
+    );
+
+    const Card = ({ title, children }) => (
+      <div className="card">
+        <h3>{title}</h3>
+        {children}
+      </div>
+    );
+
+    const DashboardMain = () => {
+      return (
+        <div className="main-content">
+          <div className="header">
+            <h1>Welcome back to your dashboard!</h1>
+            <p>Here’s a quick overview of your store performance.</p>
+          </div>
+
+          <Card title="🧵 Best-Selling Patterns">
+            <ul>
+              <li>Cozy Winter Scarf</li>
+              <li>Chunky Knit Sweater</li>
+              <li>Minimalist Cardigan</li>
+            </ul>
+          </Card>
+
+          <Card title="🧶 Yarn Inventory Status">
+            <p>Merino Wool (Blue): 120 units</p>
+            <p>Alpaca Blend (Cream): 78 units</p>
+            <p>Cotton Light (Grey): 200 units</p>
+          </Card>
+
+          <Card title="📦 Recent Orders">
+            <p>Order #1023 - 2x Chunky Sweater</p>
+            <p>Order #1022 - 1x Scarf Pattern, 5x Merino Wool</p>
+            <p>Order #1021 - 3x Cardigans</p>
+          </Card>
+        </div>
+      );
+    };
+
+    const App = () => (
+      <div className="dashboard">
+        <Sidebar />
+        <DashboardMain />
+      </div>
+    );
+
+    ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+  </script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Patterns & Merino Dashboard</title>
+  
+  <!-- React & Babel CDNs -->
+  <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+  <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+  
+  <!-- CSS Styling -->
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f4f4f4;
+    }
+    .dashboard {
+      display: flex;
+      height: 100vh;
+    }
+    .sidebar {
+      width: 220px;
+      background-color: #333;
+      color: white;
+      padding: 20px;
+    }
+    .sidebar h2 {
+      color: #f9c846;
+    }
+    .sidebar ul {
+      list-style: none;
+      padding: 0;
+    }
+    .sidebar ul li {
+      margin: 15px 0;
+      cursor: pointer;
+      color: #ccc;
+    }
+    .sidebar ul li:hover {
+      color: white;
+    }
+    .main-content {
+      flex: 1;
+      padding: 30px;
+      overflow-y: auto;
+    }
+    .card {
+      background: white;
+      border-radius: 8px;
+      padding: 20px;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    .header {
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div id="root"></div>
+
+  <!-- React Code -->
+  <script type="text/babel">
+
+    const Sidebar = () => (
+      <div className="sidebar">
+        <h2>🧶 Patterns & Merino</h2>
+        <ul>
+          <li>Dashboard</li>
+          <li>Patterns</li>
+          <li>Yarn Inventory</li>
+          <li>Orders</li>
+          <li>Settings</li>
+        </ul>
+      </div>
+    );
+
+    const Card = ({ title, children }) => (
+      <div className="card">
+        <h3>{title}</h3>
+        {children}
+      </div>
+    );
+
+    const DashboardMain = () => {
+      return (
+        <div className="main-content">
+          <div className="header">
+            <h1>Welcome back to your dashboard!</h1>
+            <p>Here’s a quick overview of your store performance.</p>
+          </div>
+
+          <Card title="🧵 Best-Selling Patterns">
+            <ul>
+              <li>Cozy Winter Scarf</li>
+              <li>Chunky Knit Sweater</li>
+              <li>Minimalist Cardigan</li>
+            </ul>
+          </Card>
+
+          <Card title="🧶 Yarn Inventory Status">
+            <p>Merino Wool (Blue): 120 units</p>
+            <p>Alpaca Blend (Cream): 78 units</p>
+            <p>Cotton Light (Grey): 200 units</p>
+          </Card>
+
+          <Card title="📦 Recent Orders">
+            <p>Order #1023 - 2x Chunky Sweater</p>
+            <p>Order #1022 - 1x Scarf Pattern, 5x Merino Wool</p>
+            <p>Order #1021 - 3x Cardigans</p>
+          </Card>
+        </div>
+      );
+    };
+
+    const App = () => (
+      <div className="dashboard">
+        <Sidebar />
+        <DashboardMain />
+      </div>
+    );
+
+    ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+  </script>
+</body>
+</html>
